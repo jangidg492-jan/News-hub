@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Hub</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <h1>📰 News Hub</h1>
+
+        <!-- Search Bar -->
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search latest news..."
+            >
+
+            <button onclick="searchNews()">Search</button>
+
+        </div>
+
+    </header>
+
+    <!-- Breaking News -->
+
+    <div class="breaking-news">
+
+        <span class="breaking-label">
+            🔴 BREAKING NEWS
+        </span>
+
+        <marquee id="breakingNews"
+                 scrollamount="6">
+
+            Loading latest news...
+
+        </marquee>
+
+    </div>
+
+    <!-- Category Buttons -->
+
+    <section class="categories">
+
+        <button onclick="loadCategory('general')">General</button>
+
+        <button onclick="loadCategory('business')">Business</button>
+
+        <button onclick="loadCategory('technology')">Technology</button>
+
+        <button onclick="loadCategory('sports')">Sports</button>
+
+        <button onclick="loadCategory('health')">Health</button>
+
+        <button onclick="loadCategory('science')">Science</button>
+
+        <button onclick="loadCategory('entertainment')">Entertainment</button>
+
+    </section>
+
+    <!-- Country -->
+
+    <section class="country">
+
+        <label>Select Country:</label>
+
+        <select id="country" onchange="changeCountry()">
+
+            <option value="us">United States</option>
+
+            <option value="in">India</option>
+
+            <option value="gb">United Kingdom</option>
+
+            <option value="au">Australia</option>
+
+            <option value="ca">Canada</option>
+
+        </select>
+
+    </section>
+
+    <!-- News Container -->
+
+    <section
+        id="newsContainer"
+        class="news-container">
+
+    </section>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
