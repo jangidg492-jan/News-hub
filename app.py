@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 
-API_KEY = os.getenv("95670352601046b59480583eb040731c")  
+API_KEY = os.getenv("11c2bdbd136a44a6a7d559755a46424c")  
 
 @app.route("/")
 def home():
