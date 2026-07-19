@@ -1,9 +1,10 @@
 from flask import Flask, request, jsonify, render_template
 import requests
+import os
 
 app = Flask(__name__)
 
-API_KEY = "95670352601046b59480583eb040731c"  
+API_KEY = os.getenv("95670352601046b59480583eb040731c")  
 
 @app.route("/")
 def home():
